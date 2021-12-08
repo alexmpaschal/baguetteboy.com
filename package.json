@@ -1,0 +1,16 @@
+{
+  "name": "baguetteboy.com",
+  "version": "1.0.0",
+  "description": "Portfolio website for Alex Paschal",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon main.js"
+  },
+  "keywords": [],
+  "author": "Alex Paschal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  }
+}

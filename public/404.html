@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>404</title>
+
+    <style>
+        :root {
+            --bg-1: #202020;
+            --txt-main: #EFEFEF;
+            --font-title: 'Roboto Condensed', sans-serif;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 100vw;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-color: var(--bg-1);
+        }
+        #navbar {
+            position: fixed;
+            width: 100vw;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 3px #00000090;
+            background-color: var(--bg-1);
+        }
+        #navbar a {
+            text-decoration: none;
+        }
+        #navbar #lang-switch li {
+            display: inline;
+            padding: 10px;
+            font-size: 1.5rem;
+            align-items: center;
+        }
+        #page-not-found {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 300px);
+            padding: 150px 0;
+        }
+        #page-not-found hgroup {
+            color: var(--txt-main);
+        }
+        #page-not-found hgroup h1 {
+            font-family: var(--font-title);
+            font-size: 160px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="title">
+            <ul id="lang-switch">
+                <li>
+                    <a href="https://baguetteboy.com/" title="English">&#x1F1FA;&#x1F1F8;</a>
+                </li>
+                <li>
+                    <a href="https://baguetteboy.com/fr/" title="Français">&#x1F1EB&#x1F1F7;</a>
+                </li>
+                <li>
+                    <a href="https://baguetteboy.com/ch/" title="中文">&#x1F1E8;&#x1F1F3;</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-not-found">
+        <hgroup>
+            <h1>404</h1>
+        </hgroup>
+    </div>
+</body>
+</html>
