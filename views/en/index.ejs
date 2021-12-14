@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <%- include('../partials/head') %>
+  <title>Home</title>
   <link rel="stylesheet" type="text/css" href="./css/index.css">
 </head>
 
 <body class="bg-dark text-white">
   <header>
-    <%- include('../partials/navbar') %>
+    <%- include('../partials/navbar', { pageTitle: 'Home' }) %>
   </header>
 
   <div class="text-center position-absolute top-50 start-50 translate-middle bg-dark">

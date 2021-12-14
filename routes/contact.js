@@ -22,7 +22,7 @@ const transporter = nodemailer.createTransport({
 })
 
 router.use(express.urlencoded({ extended: true }))
-router.use(express.static(__dirname + '/public'));
+router.use(express.static(__dirname + './../public'));
 
 router.get('/', (req, res) => {
     res.render('./contact/contact')

@@ -2,7 +2,7 @@ import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import dotenv from 'dotenv'
-import contact from './contact.js'
+import contact from './routes/contact.js'
 
 const app = express()
 
