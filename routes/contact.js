@@ -3,6 +3,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import dotenv from 'dotenv'
 import nodemailer from 'nodemailer'
+import { determineLang, checkLangSupport } from '../scripts/langs.js'
 
 const router = express.Router()
 
@@ -24,11 +25,21 @@ const transporter = nodemailer.createTransport({
 router.use(express.urlencoded({ extended: true }))
 router.use(express.static(__dirname + './../public'));
 
-router.get('/', (req, res) => {
-    res.render('./contact/contact')
+router.get('/', (req, res, next) => {
+    const lang = determineLang(req)
+    const langSupported = checkLangSupport(lang)
+
+    if (langSupported) {
+        res.render(`./${lang}/contact/contact`)
+    } else {
+        res.status(404)
+        next()
+    }
 })
 
 router.post('/', (req, res) => {
+    const lang = determineLang(req)
+
     transporter.sendMail({
         from: `${req.body.name} ${req.body.email}`,
         to: process.env.EMAIL_NAME,
@@ -36,7 +47,7 @@ router.post('/', (req, res) => {
         text: req.body.message
     })
 
-    res.redirect('/')
+    res.redirect(`/?lang=${lang}`)
 })
 
 export default router

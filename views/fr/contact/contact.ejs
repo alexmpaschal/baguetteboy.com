@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <%- include('../partials/head') %>
-  <title>Contact</title>
+  <title>Baguette Boy | Contact</title>
   <link rel="stylesheet" type="text/css" href="./css/contact.css">
 </head>
 
 <body class="bg-dark text-white">
   <header>
-    <%- include('../partials/navbar', { pageTitle: 'Contact' }) %>
+    <%- include('../partials/navbar', { pageTitle: 'Contacter' }) %>
   </header>
 
-  <form method="POST" action="/contact">
+  <form method="POST" action="/contact/?lang=fr">
     <div class="container mt-5 mb-5 d-flex justify-content-center">
       <div class="card bg-dark px-5 py-5">
-        <h1 class="text-center">Contact Me</h1>
-        <p>Feel free to use the below form to contact me. I will get back to you at my soonest convenience.</p>
+        <h1 class="text-center">Contactez-moi</h1>
+        <p class="text-center">N'hésitez pas à utiliser le formulaire ci-dessous pour me contacter. Je vous répondrai dans les meilleurs délais.</p>
         <div class="row mt-3">
           <div class="col-md-6">
-            <label for="name" class="form-label">Your Name</label>
-            <input type="text" class="form-control" name="name" placeholder="Name" required>
+            <label for="name" class="form-label">Votre Nom</label>
+            <input type="text" class="form-control" name="name" placeholder="Nom" required>
           </div>
           <div class="col-md-6">
-            <label for="email" class="form-label">Your Email</label>
-            <input type="email" class="form-control" name="email" placeholder="name@email.com" required>
+            <label for="email" class="form-label">Votre Email</label>
+            <input type="email" class="form-control" name="email" placeholder="noom@email.com" required>
           </div>
         </div>
         <div class="mt-3">
-          <label for="subject" class="form-label">Subject</label>
-          <input type="text" class="form-control" name="subject" placeholder="Subject" required="required">
+          <label for="subject" class="form-label">Sujet</label>
+          <input type="text" class="form-control" name="subject" placeholder="Sujet" required>
         </div>
         <div class="mt-3">
-          <label for="message" class="form-label">Your Message</label>
+          <label for="message" class="form-label">Votre Message</label>
           <textarea rows="6" class="form-control" name="message" placeholder="Message" required></textarea> 
         </div> 
-        <button id="submit-button" class="btn mt-5" type="submit">Send Message <i class="fa fa-long-arrow-right ml-2 mt-1"></i></button>
+        <button id="submit-button" class="btn mt-5" type="submit">Envoyer le Message <i class="fa fa-long-arrow-right ml-2 mt-1"></i></button>
       </div>
     </div>
   </form>

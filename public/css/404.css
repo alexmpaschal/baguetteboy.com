@@ -16,8 +16,6 @@ body {
 a {
     text-decoration: none;
 }
-.fa {
-    font-size: 1.5rem;
-    padding: 5px;
-    color: white;
+h1 {
+    font-size: 160px;
 }
