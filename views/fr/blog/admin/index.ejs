@@ -11,9 +11,9 @@
     <%- include('../../partials/navbar', { pageTitle: 'Blog' }) %>
   </header>
 
-  <div class="container bg-dark">
+  <div class="container mt-4">
     <h1 class="mb-2 mt-4 text-white">Articles de Blog</h1>
-    <a href="/blog/admin/new/?lang=en" class="btn btn-light mt-2 mb-2">Nouvel Article</a>
+    <a href="/blog/admin/new/?lang=fr" class="btn btn-light mt-2 mb-2">Nouvel Article</a>
 
     <% articles.forEach(article => { %>
       <div class="blog-card card mt-3 mb-3 bg-dark text-white">
@@ -23,9 +23,9 @@
             <%= article.createdAt.toLocaleDateString() %>
           </div>
           <div class="card-text mb-2"><%= article.description %></div>
-          <a href="/blog/admin/<%= article.slug %>/?lang=en" class="btn btn-light">Plus d'Informations</a>
-          <a href="/blog/admin/edit/<%= article.id %>/?lang=en" class="btn btn-light">Modifier</a>
-          <form action="/blog/admin/<%= article.id %>?_method=DELETE&lang=en" method="POST" class="d-inline">
+          <a href="/blog/admin/<%= article.slug %>/?lang=fr" class="btn btn-light">Plus d'Informations</a>
+          <a href="/blog/admin/edit/<%= article.id %>/?lang=fr" class="btn btn-light">Modifier</a>
+          <form action="/blog/admin/<%= article.id %>?_method=DELETE&lang=fr" method="POST" class="d-inline">
             <button type="submit" class="btn btn-light">Supprimer</button>
           </form>
         </div>

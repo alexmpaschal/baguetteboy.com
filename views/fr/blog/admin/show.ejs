@@ -11,12 +11,12 @@
     <%- include('../../partials/navbar', { pageTitle: 'Blog' }) %>
   </header>
 
-  <div class="container">
+  <div class="container mt-4">
     <h1 class="mt-4 mb-1"><%= article.title %></h1>
     <div class="text-muted mb-2">
       <%= article.createdAt.toLocaleDateString() %>
     </div>
-    <a href="/blog/admin/?lang=en" class="btn btn-light">Tous les Articles</a>
+    <a href="/blog/admin/?lang=fr" class="btn btn-light">Tous les Articles</a>
 
     <div class="mt-3 mb-3">
       <%- article.html %>

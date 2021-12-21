@@ -3,6 +3,14 @@
     --box-shadow: #000;
     --font: "Poppins", sans-serif;
 }
+body {
+    padding-top: 50px;
+}
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 0;
+    }
+}
 .navbar {
     box-shadow: 0 3px 3px var(--box-shadow);
     font-family: var(--font);
