@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ch">
 <head>
-  <%- include('../partials/head') %>
+  <%- include('./partials/head') %>
   <title>法棍侠 | 联系</title>
   <link rel="stylesheet" type="text/css" href="./css/contact.css">
 </head>
 
 <body class="bg-dark text-white">
   <header>
-    <%- include('../partials/navbar', { pageTitle: '联系' }) %>
+    <%- include('./partials/navbar', { pageTitle: '联系' }) %>
   </header>
 
   <form method="POST" action="/contact/?lang=ch">
@@ -28,7 +28,7 @@
         </div>
         <div class="mt-3">
           <label for="subject" class="form-label">主题</label>
-          <input type="text" class="form-control" name="subject" placeholder="主题" required="required">
+          <input type="text" class="form-control" name="subject" placeholder="主题" required>
         </div>
         <div class="mt-3">
           <label for="message" class="form-label">你的信息</label>

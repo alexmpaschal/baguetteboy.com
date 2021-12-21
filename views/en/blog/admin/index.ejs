@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../../partials/head') %>
+  <link rel="stylesheet" type="text/css" href="/css/blog.css">
+  <title>Baguette Boy | Blog</title>
+</head>
+
+<body class="bg-dark text-white">
+  <header>
+    <%- include('../../partials/navbar', { pageTitle: 'Blog' }) %>
+  </header>
+
+  <div class="container bg-dark">
+    <h1 class="mb-2 mt-4 text-white">Blog Articles</h1>
+    <a href="/blog/admin/new/?lang=en" class="btn btn-light mt-2 mb-2">New Article</a>
+
+    <% articles.forEach(article => { %>
+      <div class="blog-card card mt-3 mb-3 bg-dark text-white">
+        <div class="card-body">
+          <h4 class="card-title"><%= article.title %></h4>
+          <div class="card-subtitle text-muted mb-2">
+            <%= article.createdAt.toLocaleDateString() %>
+          </div>
+          <div class="card-text mb-2"><%= article.description %></div>
+          <a href="/blog/admin/<%= article.slug %>/?lang=en" class="btn btn-light">Read More</a>
+          <a href="/blog/admin/edit/<%= article.id %>/?lang=en" class="btn btn-light">Edit</a>
+          <form action="/blog/admin/<%= article.id %>?_method=DELETE&lang=en" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-light">Delete</button>
+          </form>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>

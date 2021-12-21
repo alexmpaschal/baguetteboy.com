@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 :root {
+    --box-shadow: #000;
     --font: "Poppins", sans-serif;
 }
-body {
+.navbar {
+    box-shadow: 0 3px 3px var(--box-shadow);
     font-family: var(--font);
 }
-h1 {
-    font-size: 160px;
+.navbar a {
+    text-decoration: none;
 }

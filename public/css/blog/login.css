@@ -9,6 +9,9 @@ body {
     font-family: var(--font);
     font-weight: 300;
 }
+.error-message {
+    color: red;
+}
 .text {
     margin: auto;
     width: 50%;

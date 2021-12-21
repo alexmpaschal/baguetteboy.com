@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../../partials/head') %>
+  <link rel="stylesheet" type="text/css" href="/css/blog/login.css">
+  <title>法棍侠 | 博客</title>
+</head>
+
+<body class="bg-dark text-white">
+  <header>
+    <%- include('../../partials/navbar', { pageTitle: '博客' }) %>
+  </header>
+
+  <form method="POST" action="/blog/admin/login/?lang=ch">
+    <div class="container mt-5 mb-5 d-flex justify-content-center">
+      <div class="card bg-dark px-5 py-5">
+        <h1 class="text-center">登录</h1>
+        <p class="text-center">登录后可编辑该博客。如果你不小心到达这个页面，你可以到<a href="https://baguetteboy.com/blog/?lang=ch"> https://baguetteboy.com/blog/?lang=ch </a>阅读该博客。</p>
+        <div class="mt-3">
+          <% if(messages?.error && messages.error[0] == "Email") { %>
+            <p class="error-message">电子邮件未被注册。</p>
+          <% } %>
+          <% if(messages?.error && messages.error[0] == "Password") { %>
+            <p class="error-message">密码不正确。</p>
+          <% } %>
+          <div>
+            <label for="email" class="form-label">电子邮件</label>
+            <input type="email" class="form-control" name="email" placeholder="name@email.com" required>
+          </div>
+        </div>
+        <div class="mt-3">
+          <label for="subject" class="form-label">密码</label>
+          <input type="password" class="form-control" name="password" placeholder="******" required>
+        </div>
+        <button id="submit-button" class="btn mt-5 btn-light" type="submit">登录</button>
+      </div>
+    </div>
+  </form>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>

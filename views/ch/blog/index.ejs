@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+  <link rel="stylesheet" type="text/css" href="/css/blog/blog.css">
+  <title>法棍侠 | 博客</title>
+</head>
+
+<body class="bg-dark text-white">
+  <header>
+    <%- include('../partials/navbar', { pageTitle: '博客' }) %>
+  </header>
+
+  <div class="container bg-dark">
+    <h1 class="mb-2 mt-4 text-white">博客的文章</h1>
+ 
+    <% articles.forEach(article => { %>
+      <div class="blog-card card mt-3 mb-3 bg-dark text-white">
+        <div class="card-body">
+          <h4 class="card-title"><%= article.title %></h4>
+          <div class="card-subtitle text-muted mb-2">
+            <%= article.createdAt.toLocaleDateString() %>
+          </div>
+          <div class="card-text mb-2"><%= article.description %></div>
+          <a href="/blog/<%= article.slug %>/?lang=ch" class="btn btn-light">阅读更多内容</a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>
