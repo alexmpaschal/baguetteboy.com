@@ -13,7 +13,10 @@
 
   <div class="container mt-4">
     <h1 class="mb-2 mt-4 text-white">Articles de Blog</h1>
-    <a href="/blog/admin/new/?lang=fr" class="btn btn-light mt-2 mb-2">Nouvel Article</a>
+    <a href="/blog/admin/new/?lang=fr" class="pull-left btn btn-light m-1">Nouvel Article</a>
+    <form action="/blog/admin/logout/?_method=DELETE&lang=fr" method="POST">
+      <button class="btn btn-light m-1" type="submit">Déconnecter</button>
+    </form>
 
     <% articles.forEach(article => { %>
       <div class="blog-card card mt-3 mb-3 bg-dark text-white">
