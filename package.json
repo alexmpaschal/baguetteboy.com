@@ -32,6 +32,7 @@
     "nodemon": "^2.0.15",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
-    "slugify": "^1.6.4"
+    "slugify": "^1.6.4",
+    "unidecode": "^0.1.8"
   }
 }
