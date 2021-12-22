@@ -40,7 +40,7 @@ router.post('/', (req, res) => {
         text: req.body.message
     })
 
-    res.redirect(`/?lang=${lang}`)
+    res.redirect(`/?lang=${lang}&contactSuccess=true`)
 })
 
 export default router

@@ -11,6 +11,13 @@
     <%- include('./partials/navbar', { pageTitle: '首页' }) %>
   </header>
 
+  <% if (typeof contactSuccessMessage !== 'undefined') { %>
+    <div class="alert alert-light alert-dismissible fade show" role="alert">
+      <%= contactSuccessMessage %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% } %>
+
   <div class="social-links text-center position-absolute top-50 start-50 translate-middle bg-dark">
     <img src="/images/baguette_boy.png" alt="法棍侠" height="120" width="120" class="m-3"/>
     <hgroup>

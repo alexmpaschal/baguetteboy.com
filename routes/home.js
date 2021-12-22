@@ -1,11 +1,18 @@
 import express from 'express'
 
-import { renderLangPage } from '../scripts/lang.js'
+import contactSuccessMessages from '../scripts/contact-success-messages.js'
+import { determineLang, renderLangPage, renderLangPageWithParams } from '../scripts/lang.js'
 
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    renderLangPage(req, res, '')
+    if (req.query.contactSuccess == 'true') {
+        const lang = determineLang(req)
+        const contactSuccessMessage = contactSuccessMessages[lang]
+        renderLangPageWithParams(req, res, '', { contactSuccessMessage: contactSuccessMessage })
+    } else {
+        renderLangPage(req, res, '')
+    }
 })
 
 export default router

@@ -6,7 +6,7 @@ export function determineLang(req) {
     }
 }
 
-function checkLangSupport(lang) {
+export function checkLangSupport(lang) {
     const supportedLangs = [ 'en', 'fr', 'ch' ]
 
     if (supportedLangs.includes(lang)) {
