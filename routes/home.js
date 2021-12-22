@@ -6,7 +6,7 @@ import { determineLang, renderLangPage, renderLangPageWithParams } from '../scri
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    if (req.query.cs == 'true') {
+    if (req.query.contact_success == 'true') {
         const lang = determineLang(req)
         const contactSuccessMessage = contactSuccessMessages[lang]
         renderLangPageWithParams(req, res, '', { contactSuccessMessage: contactSuccessMessage })
