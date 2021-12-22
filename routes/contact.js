@@ -23,21 +23,18 @@ const transporter = nodemailer.createTransport({
     }
 })
 
-router.use(express.urlencoded({ extended: true }))
-router.use(express.static(__dirname + './../public'));
-
 router.get('/', (req, res, next) => {
     renderLangPage(req, res, '/contact')
 })
 
 router.post('/', (req, res) => {
     const lang = determineLang(req)
+    const { name, email, subject, message } = req.body
 
     transporter.sendMail({
-        from: `${req.body.name} ${req.body.email}`,
         to: process.env.EMAIL_NAME,
-        subject: req.body.subject,
-        text: req.body.message
+        subject: subject,
+        text: `From: ${name} ${email} \nSubject: ${subject} \nMessage: ${message}`
     })
 
     res.redirect(`/?lang=${lang}&contact_success=true`)
