@@ -5,6 +5,7 @@ import dotenv from 'dotenv'
 import nodemailer from 'nodemailer'
 
 import { determineLang, renderLangPage } from '../scripts/lang.js'
+import { limitRequests } from '../scripts/rate-limiting.js'
 
 const router = express.Router()
 
@@ -27,9 +28,13 @@ router.get('/', (req, res, next) => {
     renderLangPage(req, res, '/contact')
 })
 
-router.post('/', (req, res) => {
+router.post('/', limitRequests(5, 10), (req, res) => {
     const lang = determineLang(req)
     const { name, email, subject, message } = req.body
+
+    if (!name || !email || !subject || !message) {
+        res.redirect(`/contact/?lang=${lang}`)
+    }
 
     transporter.sendMail({
         to: process.env.EMAIL_NAME,

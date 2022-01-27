@@ -3,6 +3,7 @@ import express from 'express'
 import { checkAuthenticated, checkNotAuthenticated, passportAuthenticate } from '../scripts/auth.js'
 import { Article } from '../scripts/db.js'
 import { determineLang, renderLangPage, renderLangPageWithParams } from '../scripts/lang.js'
+import { limitRequests } from '../scripts/rate-limiting.js'
 
 const router = express.Router()
 
@@ -15,7 +16,7 @@ router.get('/login', checkNotAuthenticated, (req, res) => {
     renderLangPage(req, res, 'blog/admin/login')
 })
 
-router.post('/login', checkNotAuthenticated, (req, res, next) => {
+router.post('/login', limitRequests(5, 10), checkNotAuthenticated, (req, res, next) => {
     const lang = determineLang(req)
     passportAuthenticate(lang)(req, res, next)
 })
