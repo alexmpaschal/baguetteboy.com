@@ -1,3 +1,5 @@
+import { TokenBucket } from './token-bucket.js';
+
 export function limitRequests(perSecond, maxBurst) {
     const buckets = new Map()
 
