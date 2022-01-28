@@ -1,5 +1,4 @@
 export class TokenBucket {
-
     constructor(capacity, fillPerSecond) {
         this.capacity = capacity;
         this.tokens = capacity;
