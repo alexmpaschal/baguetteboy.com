@@ -1,4 +1,4 @@
-export default function limitRequests(perSecond, maxBurst) {
+export function limitRequests(perSecond, maxBurst) {
     const buckets = new Map()
 
     return function limitRequestsMiddleware(req, res, next) {
