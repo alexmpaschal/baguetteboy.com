@@ -39,7 +39,7 @@ router.post('/', limitRequests(5, 10), (req, res) => {
     transporter.sendMail({
         to: process.env.EMAIL_NAME,
         subject: subject,
-        text: `From: ${name} ${email} ${req.ip} \nSubject: ${subject} \nMessage: ${message}`
+        text: `From: ${name} ${email} \nSubject: ${subject} \nMessage: ${message}`
     })
 
     res.redirect(`/?lang=${lang}&contact_success=true`)
