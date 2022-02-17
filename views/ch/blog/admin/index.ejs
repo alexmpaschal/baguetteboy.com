@@ -8,19 +8,15 @@
 
 <body class="bg-dark text-white">
   <header>
-    <%- include('../../partials/navbar', { pageTitle: '博客' }) %>
+    <%- include('../../partials/admin-navbar', { pageTitle: '博客' }) %>
   </header>
 
   <div class="container bg-dark">
     <h1 class="mb-2 mt-4 text-white">博客的文章</h1>
     <a href="/blog/admin/new/?lang=ch" class="pull-left btn btn-light m-1">新文章</a>
-    <form action="/blog/admin/logout/?_method=DELETE&lang=ch" method="POST">
-      <button class="btn btn-light m-1" type="submit">登出</button>
-    </form>
-
 
     <% articles.forEach(article => { %>
-      <div class="blog-card card mt-3 mb-3 bg-dark text-white">
+      <div class="blog-card card mt-3 mb-3 bg-dark text-white row col-sm-12">
         <div class="card-body">
           <h4 class="card-title"><%= article.title %></h4>
           <div class="card-subtitle text-muted mb-2">

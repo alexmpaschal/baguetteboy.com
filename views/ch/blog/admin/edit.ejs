@@ -3,12 +3,12 @@
 <head>
   <%- include('../../partials/head') %>
   <link rel="stylesheet" type="text/css" href="/css/blog/form.css">
-  <title>法棍侠 | 博客</title>
+  <title><%- article.title %></title>
 </head>
 
 <body class="bg-dark text-white">
   <header>
-    <%- include('../../partials/navbar', { pageTitle: '博客' }) %>
+    <%- include('../../partials/admin-navbar', { pageTitle: '博客' }) %>
   </header>
 
   <div class="container">

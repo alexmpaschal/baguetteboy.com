@@ -3,12 +3,12 @@
 <head>
   <%- include('../../partials/head') %>
   <link rel="stylesheet" type="text/css" href="/css/blog/form.css">
-  <title>Garçon Baguette | Blog</title>
+  <title><%- article.title %></title>
 </head>
 
 <body class="bg-dark text-white">
   <header>
-    <%- include('../../partials/navbar', { pageTitle: 'Blog' }) %>
+    <%- include('../../partials/admin-navbar', { pageTitle: 'Blog' }) %>
   </header>
 
   <div class="container">
