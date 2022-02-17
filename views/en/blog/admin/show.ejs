@@ -17,6 +17,7 @@
       <%= article.createdAt.toLocaleDateString() %>
     </div>
     <a href="/blog/admin/?lang=en" class="btn btn-light">All Articles</a>
+    <a href="/blog/admin/edit/<%= article.id %>/?lang=en" class="btn btn-light mt-1 mb-1">Edit</a>
 
     <div class="mt-3 mb-3">
       <%- article.html %>

@@ -17,6 +17,7 @@
       <%= article.createdAt.toLocaleDateString() %>
     </div>
     <a href="/blog/admin/?lang=ch" class="btn btn-light">所有文章</a>
+    <a href="/blog/admin/edit/<%= article.id %>/?lang=ch" class="btn btn-light mt-1 mb-1">编辑</a>
 
     <div class="mt-3 mb-3">
       <%- article.html %>
