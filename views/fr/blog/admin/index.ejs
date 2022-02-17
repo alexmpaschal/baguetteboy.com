@@ -13,7 +13,9 @@
 
   <div class="container mt-4">
     <h1 class="text-white">Articles de Blog</h1>
-    <a href="/blog/admin/new/?lang=fr" class="pull-left btn btn-light m-1 mb-4 mt-2">Nouvel Article</a>
+    <div class="d-grid d-md-block">
+      <a href="/blog/admin/new/?lang=fr" class="pull-left btn btn-light m-1 mb-4 mt-2">Nouvel Article</a>
+    </div>
 
     <% articles.forEach(article => { %>
       <div class="blog-card card mt-3 mb-3 bg-dark text-white col-sm-12">
@@ -23,9 +25,9 @@
             <%= article.createdAt.toLocaleDateString() %>
           </div>
           <div class="card-text mb-2"><%= article.description %></div>
-          <a href="/blog/admin/<%= article.slug %>/?lang=fr" class="btn btn-light">Plus d'Informations</a>
-          <a href="/blog/admin/edit/<%= article.id %>/?lang=fr" class="btn btn-light">Modifier</a>
-          <form action="/blog/admin/<%= article.id %>?_method=DELETE&lang=fr" method="POST" class="d-inline">
+          <a href="/blog/admin/<%= article.slug %>/?lang=fr" class="btn btn-light mt-1 mb-1">Plus d'Informations</a>
+          <a href="/blog/admin/edit/<%= article.id %>/?lang=fr" class="btn btn-light mt-1 mb-1">Modifier</a>
+          <form action="/blog/admin/<%= article.id %>?_method=DELETE&lang=fr" method="POST" class="d-inline mt-1 mb-1">
             <button type="submit" class="btn btn-light">Supprimer</button>
           </form>
         </div>
