@@ -4,4 +4,17 @@ mjx-container {
     overflow-y: hidden;
     width: 90vw;
     max-width: 100%;
+
+    scrollbar-width: 18px;
+    scrollbar-color: #75777a #212529;
+}
+mjx-container::-webkit-scrollbar {
+    width: 18px;
+}
+mjx-container::-webkit-scrollbar-track {
+    background: #212529;
+}  
+mjx-container::-webkit-scrollbar-thumb {
+    background-color: #212529;
+    border-radius: 1px;
 }
