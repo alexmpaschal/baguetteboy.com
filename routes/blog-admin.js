@@ -69,9 +69,9 @@ function saveArticleAndRedirect(path) {
         const lang = determineLang(req)
         try {
             article = await article.save()
-            res.redirect(`/blog/admin/${article.slug}/?lang=${lang}`)
+            res.redirect(`/blog/admin/${ article.slug }/?lang=${lang}`)
         } catch (e) {
-            res.render(`/blog/admin/${path}/?lang=${lang}`, { article: article })
+            res.render(`/blog/admin/${ path }/?lang=${lang}`, { article: article })
         }
     }
 }
